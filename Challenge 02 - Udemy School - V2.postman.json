@@ -1,0 +1,681 @@
+{
+	"info": {
+		"_postman_id": "39a69fa8-e16e-45f8-b5e8-cde21394dda4",
+		"name": "Challenge 02 - Udemy School - V2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27625958"
+	},
+	"item": [
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john93d@example.com\",\n  \"password\": \"hashedpassword1234@H\"\n}\n"
+						},
+						"url": {
+							"raw": "{{ _.URL }}/student/register",
+							"host": [
+								"{{ _.URL }}"
+							],
+							"path": [
+								"student",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json()\r",
+									"pm.globals.set(\"accessToken\",jsonData.token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"john93d@example.com\",\n  \"password\": \"hashedpassword1234@H\"\n}"
+						},
+						"url": {
+							"raw": "{{ _.URL }}/student/login",
+							"host": [
+								"{{ _.URL }}"
+							],
+							"path": [
+								"student",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john93d@example.com\",\n  \"password\": \"hashedpassword1234@H\"\n}\n"
+						},
+						"url": {
+							"raw": "{{ _.URL }}/student/update",
+							"host": [
+								"{{ _.URL }}"
+							],
+							"path": [
+								"student",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{ _.URL }}/student/delete",
+							"host": [
+								"{{ _.URL }}"
+							],
+							"path": [
+								"student",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "About",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{ _.URL }}/student/about",
+							"host": [
+								"{{ _.URL }}"
+							],
+							"path": [
+								"student",
+								"about"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Instructor",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"johndoe1@example.com\",\n  \"password\": \"hashedpAssword123\",\n  \"specialty\":\"Developer\"\n}\n"
+						},
+						"url": {
+							"raw": "{{ _.URL }}/instructor/register",
+							"host": [
+								"{{ _.URL }}"
+							],
+							"path": [
+								"instructor",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json()\r",
+									"pm.globals.set(\"accessToken\",jsonData.token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"johndoe1@example.com\",\n  \"password\": \"hashedpAssword123\"\n}"
+						},
+						"url": {
+							"raw": "{{ _.URL }}/instructor/login",
+							"host": [
+								"{{ _.URL }}"
+							],
+							"path": [
+								"instructor",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"johndoe1@example.com\",\n  \"password\": \"hashedpassword1234\",\n  \"specialty\": \"Hacker\"\n}\n"
+						},
+						"url": {
+							"raw": "{{ _.URL }}/instructor/update",
+							"host": [
+								"{{ _.URL }}"
+							],
+							"path": [
+								"instructor",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{ _.URL }}/instructor/delete",
+							"host": [
+								"{{ _.URL }}"
+							],
+							"path": [
+								"instructor",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Administrator",
+			"item": [
+				{
+					"name": "Student",
+					"item": [
+						{
+							"name": "All Students",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ _.URL }}/admin/students",
+									"host": [
+										"{{ _.URL }}"
+									],
+									"path": [
+										"admin",
+										"students"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Student With Id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ _.URL }}/admin/student/64f1c21418432bfcea8c123d",
+									"host": [
+										"{{ _.URL }}"
+									],
+									"path": [
+										"admin",
+										"student",
+										"64f1c21418432bfcea8c123d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Student With Id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"John Ricardo\",\n  \"email\": \"john1012@example.com\",\n  \"password\": \"hashedpassword1234\"\n}\n"
+								},
+								"url": {
+									"raw": "{{ _.URL }}/admin/student/64f1c21418432bfcea8c123d",
+									"host": [
+										"{{ _.URL }}"
+									],
+									"path": [
+										"admin",
+										"student",
+										"64f1c21418432bfcea8c123d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Student With Id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{ _.URL }}/admin/student/64f1c16818432bfcea8c122c",
+									"host": [
+										"{{ _.URL }}"
+									],
+									"path": [
+										"admin",
+										"student",
+										"64f1c16818432bfcea8c122c"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Instructor",
+					"item": [
+						{
+							"name": "All Instructors",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ _.URL }}/admin/instructors",
+									"host": [
+										"{{ _.URL }}"
+									],
+									"path": [
+										"admin",
+										"instructors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Instructor With Id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ _.URL }}/admin/instructor/64f1c29518432bfcea8c124b",
+									"host": [
+										"{{ _.URL }}"
+									],
+									"path": [
+										"admin",
+										"instructor",
+										"64f1c29518432bfcea8c124b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Instructor With Id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"John Ricardo\",\n  \"email\": \"johndoe1@example.com\",\n  \"password\": \"hashedpassword1234\"\n}\n"
+								},
+								"url": {
+									"raw": "{{ _.URL }}/admin/instructor/64f1c29518432bfcea8c124b",
+									"host": [
+										"{{ _.URL }}"
+									],
+									"path": [
+										"admin",
+										"instructor",
+										"64f1c29518432bfcea8c124b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Instructor With Id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john102@example.com\",\n  \"password\": \"hashedpassword1234\"\n}\n"
+								},
+								"url": {
+									"raw": "{{ _.URL }}/admin/instructor/64f1c29518432bfcea8c124b",
+									"host": [
+										"{{ _.URL }}"
+									],
+									"path": [
+										"admin",
+										"instructor",
+										"64f1c29518432bfcea8c124b"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json()\r",
+									"pm.globals.set(\"accessToken\",jsonData.token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"admin@admin.com\",\n\t\"password\":\"adminPassword\"\n}"
+						},
+						"url": {
+							"raw": "{{ _.URL }}/admin/login",
+							"host": [
+								"{{ _.URL }}"
+							],
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": " _.URL ",
+			"value": "http://localhost:3000/api/v1"
+		}
+	]
+}
