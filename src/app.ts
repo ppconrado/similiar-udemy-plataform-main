@@ -19,7 +19,7 @@ const mongoDBService = new MongoDBService(mongoURI);
     console.log('Connected to MongoDB 🍃');
     const adminRepository = new AdminRepository();
     adminRepository.createDefaultAdmin();
-    const port = process.env.SERVER_PORT || 3000;
+    const port = process.env.SERVER_PORT;
     app.listen(port, () => console.log(`Server is running in port ${port} 🚀`));
   } catch (error) {
     console.error('Error starting server:', error);
