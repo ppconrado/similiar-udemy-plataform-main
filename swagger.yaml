@@ -4,28 +4,29 @@ info:
   title: Challenge 02 - Udemy School - V2
   version: 1.0.0-oas3
 servers:
-- url: "http://localhost:3000/api/v1"
+  - url: 'https://similar-udemy-platform.onrender.com/'
+  - url: 'http://localhost:3000/api/v1'
 tags:
-- name: Student
-- name: Instructor
-- name: Administrator
-- name: Administrator > Student
-- name: Administrator > Instructor
+  - name: Student
+  - name: Instructor
+  - name: Administrator
+  - name: Administrator > Student
+  - name: Administrator > Instructor
 paths:
   /student/register:
     post:
       tags:
-      - Student
+        - Student
       summary: Register
       parameters:
-      - name: Content-Type
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: application/json
+        - name: Content-Type
+          in: header
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: application/json
       requestBody:
         content:
           application/json:
@@ -36,26 +37,26 @@ paths:
                 email: john93d@example.com
                 password: hashedpassword1234@H
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
       security:
-      - bearerAuth: []
+        - bearerAuth: []
   /student/login:
     post:
       tags:
-      - Student
+        - Student
       summary: Login
       parameters:
-      - name: Content-Type
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: application/json
+        - name: Content-Type
+          in: header
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: application/json
       requestBody:
         content:
           application/json:
@@ -65,26 +66,26 @@ paths:
                 email: john93d@example.com
                 password: hashedpassword1234@H
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
       security:
-      - bearerAuth: []
+        - bearerAuth: []
   /student/update:
     put:
       tags:
-      - Student
+        - Student
       summary: Update
       parameters:
-      - name: Content-Type
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: application/json
+        - name: Content-Type
+          in: header
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: application/json
       requestBody:
         content:
           application/json:
@@ -95,68 +96,68 @@ paths:
                 email: john93d@example.com
                 password: hashedpassword1234@H
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
       security:
-      - bearerAuth: []
+        - bearerAuth: []
   /student/delete:
     delete:
       tags:
-      - Student
+        - Student
       summary: Delete
       parameters:
-      - name: Content-Type
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: application/json
+        - name: Content-Type
+          in: header
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: application/json
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
       security:
-      - bearerAuth: []
+        - bearerAuth: []
   /student/about:
     get:
       tags:
-      - Student
+        - Student
       summary: About
       parameters:
-      - name: Content-Type
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: application/json
+        - name: Content-Type
+          in: header
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: application/json
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
       security:
-      - bearerAuth: []
+        - bearerAuth: []
   /instructor/register:
     post:
       tags:
-      - Instructor
+        - Instructor
       summary: Register
       parameters:
-      - name: Content-Type
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: application/json
+        - name: Content-Type
+          in: header
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: application/json
       requestBody:
         content:
           application/json:
@@ -168,26 +169,26 @@ paths:
                 password: hashedpAssword123
                 specialty: Developer
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
       security:
-      - bearerAuth: []
+        - bearerAuth: []
   /instructor/login:
     post:
       tags:
-      - Instructor
+        - Instructor
       summary: Login
       parameters:
-      - name: Content-Type
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: application/json
+        - name: Content-Type
+          in: header
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: application/json
       requestBody:
         content:
           application/json:
@@ -197,26 +198,26 @@ paths:
                 email: johndoe1@example.com
                 password: hashedpAssword123
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
       security:
-      - bearerAuth: []
+        - bearerAuth: []
   /instructor/update:
     put:
       tags:
-      - Instructor
+        - Instructor
       summary: Update
       parameters:
-      - name: Content-Type
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: application/json
+        - name: Content-Type
+          in: header
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: application/json
       requestBody:
         content:
           application/json:
@@ -228,61 +229,61 @@ paths:
                 password: hashedpassword1234
                 specialty: Hacker
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
       security:
-      - bearerAuth: []
+        - bearerAuth: []
   /instructor/delete:
     delete:
       tags:
-      - Instructor
+        - Instructor
       summary: Delete
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
       security:
-      - bearerAuth: []
+        - bearerAuth: []
   /admin/students:
     get:
       tags:
-      - Administrator > Student
+        - Administrator > Student
       summary: All Students
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
       security:
-      - bearerAuth: []
+        - bearerAuth: []
   /admin/student/64f0c3ae2257a97d234ef37f:
     get:
       tags:
-      - Administrator > Student
+        - Administrator > Student
       summary: Student With Id
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
       security:
-      - bearerAuth: []
+        - bearerAuth: []
     put:
       tags:
-      - Administrator > Student
+        - Administrator > Student
       summary: Student With Id
       parameters:
-      - name: Content-Type
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: application/json
+        - name: Content-Type
+          in: header
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: application/json
       requestBody:
         content:
           application/json:
@@ -293,61 +294,61 @@ paths:
                 email: john1012@example.com
                 password: hashedpassword1234
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
       security:
-      - bearerAuth: []
+        - bearerAuth: []
   /admin/student/64eee21a8ca9968ee17d12ec:
     delete:
       tags:
-      - Administrator > Student
+        - Administrator > Student
       summary: Student With Id
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
       security:
-      - bearerAuth: []
+        - bearerAuth: []
   /admin/instructors:
     get:
       tags:
-      - Administrator > Instructor
+        - Administrator > Instructor
       summary: All Instructors
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
       security:
-      - bearerAuth: []
+        - bearerAuth: []
   /admin/instructor/64f0c4812257a97d234ef383:
     get:
       tags:
-      - Administrator > Instructor
+        - Administrator > Instructor
       summary: Instructor With Id
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
       security:
-      - bearerAuth: []
+        - bearerAuth: []
     put:
       tags:
-      - Administrator > Instructor
+        - Administrator > Instructor
       summary: Instructor With Id
       parameters:
-      - name: Content-Type
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: application/json
+        - name: Content-Type
+          in: header
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: application/json
       requestBody:
         content:
           application/json:
@@ -358,47 +359,47 @@ paths:
                 email: johndoe12@example.com
                 password: hashedpassword1234
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
       security:
-      - bearerAuth: []
+        - bearerAuth: []
   /admin/instructor/64ece49d369e5db12ffd916f:
     delete:
       tags:
-      - Administrator > Instructor
+        - Administrator > Instructor
       summary: Instructor With Id
       parameters:
-      - name: Content-Type
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: application/json
+        - name: Content-Type
+          in: header
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: application/json
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
       security:
-      - bearerAuth: []
+        - bearerAuth: []
   /admin/login:
     post:
       tags:
-      - Administrator
+        - Administrator
       summary: Login
       parameters:
-      - name: Content-Type
-        in: header
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: application/json
+        - name: Content-Type
+          in: header
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: application/json
       requestBody:
         content:
           application/json:
@@ -408,12 +409,12 @@ paths:
                 email: admin@admin.com
                 password: adminPassword
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json: {}
       security:
-      - bearerAuth: []
+        - bearerAuth: []
 components:
   schemas: {}
   securitySchemes:
