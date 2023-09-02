@@ -259,7 +259,11 @@ paths:
             application/json: {}
       security:
         - bearerAuth: []
-  /admin/student/64f0c3ae2257a97d234ef37f:
+  /admin/student/{id}:
+    parameters:
+      - in: path
+        name: id
+        description: The student ID
     get:
       tags:
         - Administrator > Student
@@ -300,11 +304,13 @@ paths:
             application/json: {}
       security:
         - bearerAuth: []
-  /admin/student/64eee21a8ca9968ee17d12ec:
     delete:
       tags:
         - Administrator > Student
       summary: Student With Id
+      #  parameters:
+      #   - in: path
+      #     name: id
       responses:
         '200':
           description: Successful response
@@ -324,7 +330,14 @@ paths:
             application/json: {}
       security:
         - bearerAuth: []
-  /admin/instructor/64f0c4812257a97d234ef383:
+  /admin/instructor/{id}:
+    parameters:
+      - in: path
+        name: id
+        # schema:
+        #   type: string
+        # required: true
+        description: The instructor ID
     get:
       tags:
         - Administrator > Instructor
@@ -365,20 +378,14 @@ paths:
             application/json: {}
       security:
         - bearerAuth: []
-  /admin/instructor/64ece49d369e5db12ffd916f:
     delete:
       tags:
         - Administrator > Instructor
       summary: Instructor With Id
       parameters:
-        - name: Content-Type
-          in: header
-          required: false
-          style: simple
-          explode: false
-          schema:
-            type: string
-          example: application/json
+        - in: path
+          name: id
+          description: The instructor ID
       responses:
         '200':
           description: Successful response
