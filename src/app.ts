@@ -2,8 +2,8 @@ import { config } from 'dotenv';
 import { app } from './server';
 import MongoDBService from './services/MongoDBService';
 import { AdminRepository } from './repositories/Admin';
-// const cors = require('cors');
-// app.use(cors());
+const cors = require('cors');
+app.use(cors());
 config();
 const mongoURI = process.env.MONGO_URI;
 
