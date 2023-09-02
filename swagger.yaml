@@ -4,7 +4,7 @@ info:
   title: Challenge 02 - Udemy School - V2
   version: 1.0.0-oas3
 servers:
-  - url: 'https://similar-udemy-platform.onrender.com'
+  - url: 'https://similar-udemy-platform.onrender.com/api/v1'
   - url: 'http://localhost:3000/api/v1'
 tags:
   - name: Student
